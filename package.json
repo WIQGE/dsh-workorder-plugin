@@ -1,0 +1,43 @@
+{
+  "name": "dsh-workorder-plugin",
+  "version": "0.2.0",
+  "description": "DSH plugin: a strong model writes a work order, a cheap model executes it, acceptance commands decide. Ships a skill, a settings page with model dropdowns, and an always-on policy gate.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "lib",
+    "skills",
+    "tools",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "agent",
+    "delegation",
+    "task-card",
+    "work-order",
+    "cost"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  }
+}

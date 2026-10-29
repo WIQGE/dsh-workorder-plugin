@@ -1,0 +1,15 @@
+# 模型组合：推荐去「设置 → 插件 → 工单委派」用下拉改；这里改也可以。
+#
+# planner 和 executor 可以来自不同 provider —— 那是这个插件的重点：
+# 贵模型只出工单，便宜模型承担全部读代码和迭代。
+#
+# provider 和 model 的取值必须是你自己 profile 里已配置的，跑一次
+# tools/sync-catalog.ps1 会把当前配置同步进设置页的下拉列表。
+- insert:
+    - id: dsh-workorder-plugin
+      name: 'dsh-workorder-plugin'
+      config:
+        plannerProvider: ''
+        planner: ''
+        workerProvider: ''
+        worker: ''
